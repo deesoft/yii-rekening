@@ -1,6 +1,9 @@
 <?php
 
 $params = require(__DIR__ . '/params.php');
+if(is_file(__DIR__ . '/params-local.php')){
+    $params = array_merge($params, require(__DIR__ . '/params-local.php'));
+}
 $db = require(__DIR__ . '/db.php');
 
 $config = [
